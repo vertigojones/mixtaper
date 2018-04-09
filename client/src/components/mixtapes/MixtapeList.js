@@ -61,9 +61,9 @@ class MixtapeList extends Component {
     return (
       <PageWrapper>
         <h1>Currently On The Mix:</h1>
-        <Button primary onClick={this.toggleNewMixtapeForm}>
+        <button primary onClick={this.toggleNewMixtapeForm}>
           Create New Mixtape
-        </Button>
+        </button>
         {this.state.mixtapeFormOpen ? (
           <NewMixtapeForm
             createNewMixtape={this.createNewMixtape}
