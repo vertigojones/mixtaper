@@ -18,13 +18,14 @@ class MixtapeList extends Component {
   };
 
   componentWillMount() {
-    this.fetchMixtapes();
+    this.getAllMixtapes();
   }
 
-  fetchMixtapes = async () => {
+  getAllMixtapes = async () => {
     try {
       const res = await axios.get("/api/mixtapes");
-      this.setState({ mixtapes: res.data.mixtapes });
+      this.setState({ mixtapes: res.data });
+      console.log(this.state);
     } catch (err) {
       console.log(err);
       this.setState({ err: err.message });
@@ -71,6 +72,22 @@ class MixtapeList extends Component {
             newMixtape={this.state.newMixtape}
           />
         ) : null}
+        <MixtapeWrapper>
+          {this.state.mixtapes.map(mixtape => {
+            return (
+              <div key={mixtape.id}>
+                <Link to={`/mixtapes/${mixtape.id}`}>
+                  <h3>{mixtape.title}</h3>
+                  <h3>{mixtape.created_by}</h3>
+                  <h3>{mixtape.created_for}</h3>
+                  <p>{mixtape.dedication}</p>
+                  <hr />
+                </Link>
+              </div>
+            );
+          })}
+        </MixtapeWrapper>
+        {this.state.err}
       </PageWrapper>
     );
   }
@@ -79,3 +96,5 @@ class MixtapeList extends Component {
 export default MixtapeList;
 
 const PageWrapper = styled.div``;
+
+const MixtapeWrapper = styled.div``;
