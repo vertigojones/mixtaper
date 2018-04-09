@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import { Container, Modal, Button, Card, Image } from "semantic-ui-react";
 import NewMixtapeForm from "./NewMixtapeForm";
 
 class MixtapeList extends Component {
@@ -61,33 +62,38 @@ class MixtapeList extends Component {
   render() {
     return (
       <PageWrapper>
-        <h1>Currently On The Mix:</h1>
-        <button primary onClick={this.toggleNewMixtapeForm}>
-          Create New Mixtape
-        </button>
-        {this.state.mixtapeFormOpen ? (
-          <NewMixtapeForm
-            createNewMixtape={this.createNewMixtape}
-            handleChange={this.handleChange}
-            newMixtape={this.state.newMixtape}
-          />
-        ) : null}
-        <MixtapeWrapper>
-          {this.state.mixtapes.map(mixtape => {
-            return (
-              <div key={mixtape.id}>
-                <Link to={`/mixtapes/${mixtape.id}`}>
-                  <h3>{mixtape.title}</h3>
-                  <h3>{mixtape.created_by}</h3>
-                  <h3>{mixtape.created_for}</h3>
-                  <p>{mixtape.dedication}</p>
-                  <hr />
-                </Link>
-              </div>
-            );
-          })}
-        </MixtapeWrapper>
-        {this.state.err}
+        <Container>
+          <h1>Currently On The Mix:</h1>
+          <Button primary onClick={this.toggleNewMixtapeForm}>
+            Create New Mixtape
+          </Button>
+          {this.state.mixtapeFormOpen ? (
+            <NewMixtapeForm
+              createNewMixtape={this.createNewMixtape}
+              handleChange={this.handleChange}
+              newMixtape={this.state.newMixtape}
+            />
+          ) : null}
+          <MixtapeWrapper>
+            <FlexCards>
+              {this.state.mixtapes.map(mixtape => {
+                return (
+                  <Card key={mixtape.id}>
+                    <Link to={`/mixtapes/${mixtape.id}`}>
+                      <Card.Content>
+                        <Card.Header>{mixtape.title}</Card.Header>
+                        <Card.Meta>Created by: {mixtape.created_by}</Card.Meta>
+                        <Card.Meta>Created for: {mixtape.created_for}</Card.Meta>
+                        <Card.Meta>Dedication: {mixtape.dedication}</Card.Meta>
+                      </Card.Content>
+                    </Link>
+                  </Card>
+                );
+              })}
+            </FlexCards>
+          </MixtapeWrapper>
+          {this.state.err}
+        </Container>
       </PageWrapper>
     );
   }
@@ -98,3 +104,11 @@ export default MixtapeList;
 const PageWrapper = styled.div``;
 
 const MixtapeWrapper = styled.div``;
+
+const FlexCards = styled.div`
+  display: flex;
+  flex-flow: row-reverse wrap-reverse;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: flex-start;
+`
