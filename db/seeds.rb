@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Mixtape.destroy_all
+
+grunge = Mixtape.create!({
+    title: "Grunge Mix",
+    created_by: "Kurt's Biggest Fan",
+    created_for: "My 'In Bloom'",
+    dedication: "Thought you would appreciate this mix, to remind you of when we first met!"
+})
