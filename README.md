@@ -5,6 +5,8 @@ Whatever your reason was behind your mixtape, we’re bringing it all back, but 
 Mixtaper pulls in information from the lastfm API.
 
 
+Heroku: https://mixtaper-app.herokuapp.com/
+
 Trello Board: https://trello.com/b/GEMhnnFj/project-four-mixtaper
 
 ERD: https://i.imgur.com/jT2JUSL.jpg?1
