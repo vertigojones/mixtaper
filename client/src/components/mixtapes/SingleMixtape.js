@@ -5,7 +5,7 @@ import { Card, Image, Grid, List, Divider, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import EditMixtapeForm from "./EditMixtapeForm";
 
-class Mixtape extends Component {
+class SingleMixtape extends Component {
   state = {
     mixtape: {},
     songs: [],
@@ -18,12 +18,19 @@ class Mixtape extends Component {
 
   getSingleMixtape = async () => {
     const mixtapeId = this.props.match.params.id;
-    const res = await axios.get(`api/mixtapes/${mixtapeId}`);
+    const res = await axios.get(`/api/mixtapes/${mixtapeId}`);
     this.setState({
-      mixtape: res.data.mixtape,
-      songs: res.data.songs
+      mixtape: res.data,
+      songs: res.data
     });
     console.log(res.data);
+  };
+
+  deleteMixtape = async () => {
+    const mixtapeId = this.props.match.params.id;
+    await axios.delete(`/api/mixtapes/${mixtapeId}`);
+    console.log(this.props.match.params.id);
+    this.props.history.push("/");
   };
 
   render() {
@@ -31,13 +38,16 @@ class Mixtape extends Component {
       <PageWrapper>
         <MixtapeWrapper>
           <ImageWrapper>
-            <img
+            {/* <img
               src="https://i.imgur.com/iOljN8M.png"
               alt={this.state.mixtape.title}
-            />
-            <TitleWrapper>
-              <h1>{this.state.mixtape.title}</h1>
-            </TitleWrapper>
+            /> */}
+            <Background>
+              <BackgroundText>
+                <h1>{this.state.mixtape.title}</h1>
+              </BackgroundText>
+            </Background>
+            <TitleWrapper />
           </ImageWrapper>
         </MixtapeWrapper>
       </PageWrapper>
@@ -45,7 +55,7 @@ class Mixtape extends Component {
   }
 }
 
-export default Mixtape;
+export default SingleMixtape;
 
 const PageWrapper = styled.div`
   img {
@@ -58,20 +68,37 @@ const PageWrapper = styled.div`
   }
 `;
 
+const Background = styled.div`
+  background: url("https://i.imgur.com/iOljN8M.png");
+  height: 60vh;
+  width: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: flex;
+`;
+const BackgroundText = styled.div`
+  margin: 80px auto;
+  h1 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 42px;
+  }
+`;
+
 const MixtapeWrapper = styled.div`
   align-items: center;
 `;
 
 const ImageWrapper = styled.div`
-  margin: 20px;
+  /* margin: 20px;
   width: 100%;
-  position: relative;
+  position: relative; */
 `;
 
 const TitleWrapper = styled.div`
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 100px;
+  right: 150px;
   color: black
   padding-left: 20px;
   padding-right: 20px;

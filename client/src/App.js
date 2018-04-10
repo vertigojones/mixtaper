@@ -28,7 +28,7 @@ class App extends Component {
           </LinkWrapper>
           <Body>
             <Route exact path="/" component={MixtapeList} />
-            <Route path="/mixtapes/:id" component={SingleMixtape} />
+            <Route exact path="/mixtapes/:id" component={SingleMixtape} />
           </Body>
           <Footer />
         </div>

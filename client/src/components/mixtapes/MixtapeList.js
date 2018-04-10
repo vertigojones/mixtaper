@@ -56,7 +56,8 @@ class MixtapeList extends Component {
         created_for: "",
         dedication: ""
       }
-    });
+    })
+    this.toggleNewMixtapeForm()
   };
 
   render() {
