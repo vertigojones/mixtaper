@@ -48,17 +48,20 @@ class SingleMixtape extends Component {
     return (
       <PageWrapper>
         <MixtapeWrapper>
-          <ImageWrapper>
-            <Background>
-              <BackgroundText>
-                <h1>{this.state.mixtape.title}</h1>
-              </BackgroundText>
-            </Background>
-          </ImageWrapper>
+          <Background>
+            <BackgroundText>
+              <h1>{this.state.mixtape.title}</h1>
+            </BackgroundText>
+          </Background>
           <h2>Created by {this.state.mixtape.created_by}</h2>
           <h2>Created for {this.state.mixtape.created_for}</h2>
           <h2>Dedication: {this.state.mixtape.dedication}</h2>
         </MixtapeWrapper>
+        <ButtonWrapper>
+          <Button negative onClick={this.deleteMixtape}>
+            Delete {this.state.mixtape.title}
+          </Button>
+        </ButtonWrapper>
       </PageWrapper>
     );
   }
@@ -96,6 +99,6 @@ const MixtapeWrapper = styled.div`
   align-items: center;
 `;
 
-const ImageWrapper = styled.div`
-  /* margin: 20px; */
+const ButtonWrapper = styled.div`
+  margin: 30px 0px;
 `;
