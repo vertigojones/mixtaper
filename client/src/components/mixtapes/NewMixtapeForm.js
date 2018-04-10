@@ -21,7 +21,7 @@ class NewMixtapeForm extends Component {
           <label>Dedication:</label>
           <input placeholder='Dedication' name="dedication" onChange={this.props.handleChange} value={this.props.newMixtape.dedication}/>
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Button color="green" type='submit'>Create Mixtape</Button>
       </Form>
     )
   }

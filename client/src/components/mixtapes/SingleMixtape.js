@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Card, Image, Grid, List, Divider, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import EditMixtapeForm from "./EditMixtapeForm";
-import ConfirmDelete from "../ConfirmDelete";
 
 class SingleMixtape extends Component {
   state = {
@@ -27,14 +26,24 @@ class SingleMixtape extends Component {
     console.log(res.data);
   };
 
-  toggleDelete = () => {
-    this.setState({ confirmDelete: !this.state.confirmDelete });
-    this.setState({ editForm: false });
+  toggleEdit = () => {
+    this.setState({ showEditMixtape: !this.state.showEditMixtape });
   };
 
-  toggleEdit = () => {
-    this.setState({ editForm: !this.state.editForm });
-    this.setState({ confirmDelete: false });
+  handleSubmit = async event => {
+    event.preventDefault();
+    const mixtapeId = this.state.mixtape.id;
+    const mixtapeUpdate = { ...this.state.mixtape };
+    await axios.patch(`/api/mixtapes/${mixtapeId}`, mixtapeUpdate);
+    this.toggleEdit();
+    await this.getSingleMixtape();
+  };
+
+  handleChange = event => {
+    const mixtape = event.target.name;
+    const newMixtape = { ...this.state.mixtape };
+    newMixtape[mixtape] = event.target.value;
+    this.setState({ mixtape: newMixtape });
   };
 
   deleteMixtape = async () => {
@@ -61,7 +70,18 @@ class SingleMixtape extends Component {
           <Button negative onClick={this.deleteMixtape}>
             Delete {this.state.mixtape.title}
           </Button>
+          <Button primary onClick={this.toggleEdit}>
+            Edit {this.state.mixtape.title}
+          </Button>
         </ButtonWrapper>
+        {this.state.showEditMixtape ? (
+          <EditMixtapeForm
+            toggleEdit={this.toggleEdit}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+            mixtape={this.state.mixtape}
+          />
+        ) : null}
       </PageWrapper>
     );
   }
