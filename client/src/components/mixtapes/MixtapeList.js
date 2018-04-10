@@ -111,13 +111,14 @@ const PageWrapper = styled.div`
   text-align: center;
 
   h1 {
-    font-family: 'Faster One', cursive;
+    font-family: 'Press Start 2P', cursive;
     padding: 10px;
   }
 `;
 
 const MixtapeWrapper = styled.div`
   font-family: "Permanent Marker", cursive;
+  color: black;
   margin: 10px;
 `;
 
