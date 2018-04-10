@@ -40,7 +40,7 @@ class App extends Component {
 export default App;
 
 const Body = styled.div`
-  height: 100vh;
+  height: 100%;
 `;
 
 const LinkWrapper = styled.div`

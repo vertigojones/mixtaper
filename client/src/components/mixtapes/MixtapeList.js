@@ -68,30 +68,38 @@ class MixtapeList extends Component {
             <FlexCards>
               {this.state.mixtapes.map(mixtape => {
                 return (
-                  <Card key={mixtape.id}>
-                    <Link to={`/mixtapes/${mixtape.id}`}>
-                      <Image
-                        src="https://i.imgur.com/bbkj8Xo.jpg"
-                        alt="cassette tape"
-                      />
-                      <Card.Content>
-                        <Card.Header>{mixtape.title}</Card.Header>
-                        <Card.Meta>Created by: {mixtape.created_by}</Card.Meta>
-                        <Card.Meta>
-                          Created for: {mixtape.created_for}
-                        </Card.Meta>
-                        <Card.Meta>Dedication: {mixtape.dedication}</Card.Meta>
-                      </Card.Content>
-                    </Link>
-                  </Card>
+                  <CardWrapper>
+                    <Card key={mixtape.id}>
+                      <Link to={`/mixtapes/${mixtape.id}`}>
+                        <Image
+                          src="https://i.imgur.com/bbkj8Xo.jpg"
+                          alt="cassette tape"
+                        />
+                        <Card.Content>
+                          <Card.Header>{mixtape.title}</Card.Header>
+                          <Card.Meta>
+                            Created by: {mixtape.created_by}
+                          </Card.Meta>
+                          <Card.Meta>
+                            Created for: {mixtape.created_for}
+                          </Card.Meta>
+                          <Card.Meta>
+                            Dedication: {mixtape.dedication}
+                          </Card.Meta>
+                        </Card.Content>
+                      </Link>
+                    </Card>
+                  </CardWrapper>
                 );
               })}
             </FlexCards>
           </MixtapeWrapper>
           {this.state.err}
-          <Button primary onClick={this.toggleNewMixtapeForm}>
-            Create New Mixtape
-          </Button>
+          <ButtonWrapper>
+            <Button primary onClick={this.toggleNewMixtapeForm}>
+              Create New Mixtape
+            </Button>
+          </ButtonWrapper>
           {this.state.mixtapeFormOpen ? (
             <NewMixtapeForm
               createNewMixtape={this.createNewMixtape}
@@ -111,7 +119,7 @@ const PageWrapper = styled.div`
   text-align: center;
 
   h1 {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Press Start 2P", cursive;
     padding: 10px;
   }
 `;
@@ -129,3 +137,11 @@ const FlexCards = styled.div`
   align-items: flex-start;
   align-content: flex-start;
 `;
+
+const CardWrapper = styled.div`
+  box-shadow: 0 8px 16px 0 #ffff4d, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`;
+
+const ButtonWrapper = styled.div`
+margin: 30px 0px;
+`
