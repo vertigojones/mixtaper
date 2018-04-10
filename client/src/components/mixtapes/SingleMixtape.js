@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Card, Image, Grid, List, Divider, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import EditMixtapeForm from "./EditMixtapeForm";
+import ConfirmDelete from "../ConfirmDelete";
 
 class SingleMixtape extends Component {
   state = {
@@ -26,6 +27,16 @@ class SingleMixtape extends Component {
     console.log(res.data);
   };
 
+  toggleDelete = () => {
+    this.setState({ confirmDelete: !this.state.confirmDelete });
+    this.setState({ editForm: false });
+  };
+
+  toggleEdit = () => {
+    this.setState({ editForm: !this.state.editForm });
+    this.setState({ confirmDelete: false });
+  };
+
   deleteMixtape = async () => {
     const mixtapeId = this.props.match.params.id;
     await axios.delete(`/api/mixtapes/${mixtapeId}`);
@@ -38,17 +49,15 @@ class SingleMixtape extends Component {
       <PageWrapper>
         <MixtapeWrapper>
           <ImageWrapper>
-            {/* <img
-              src="https://i.imgur.com/iOljN8M.png"
-              alt={this.state.mixtape.title}
-            /> */}
             <Background>
               <BackgroundText>
                 <h1>{this.state.mixtape.title}</h1>
               </BackgroundText>
             </Background>
-            <TitleWrapper />
           </ImageWrapper>
+          <h2>Created by {this.state.mixtape.created_by}</h2>
+          <h2>Created for {this.state.mixtape.created_for}</h2>
+          <h2>Dedication: {this.state.mixtape.dedication}</h2>
         </MixtapeWrapper>
       </PageWrapper>
     );
@@ -58,31 +67,29 @@ class SingleMixtape extends Component {
 export default SingleMixtape;
 
 const PageWrapper = styled.div`
-  img {
-    width: 70%;
-    display: block;
-    margin: 0 auto;
-    border-radius: 15px;
-    padding: 15px;
-    box-shadow: 0 8px 16px 0 #ffff4d, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+
+  h1 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 32px;
+  }
+
+  h2 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 21px;
   }
 `;
 
 const Background = styled.div`
-  background: url("https://i.imgur.com/iOljN8M.png");
-  height: 60vh;
+  background: url("http://audiotranscriptpro.com/img/tape.gif");
+  height: 42vh;
   width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
-  text-align: center;
   display: flex;
 `;
 const BackgroundText = styled.div`
-  margin: 80px auto;
-  h1 {
-    font-family: "Permanent Marker", cursive;
-    font-size: 42px;
-  }
+  margin: 75px auto;
 `;
 
 const MixtapeWrapper = styled.div`
@@ -90,16 +97,5 @@ const MixtapeWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  /* margin: 20px;
-  width: 100%;
-  position: relative; */
-`;
-
-const TitleWrapper = styled.div`
-  position: absolute;
-  bottom: 100px;
-  right: 150px;
-  color: black
-  padding-left: 20px;
-  padding-right: 20px;
+  /* margin: 20px; */
 `;

@@ -11,10 +11,6 @@ injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Faster+One|Fontdiner+Swanky');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
-button {
-  margin: 10px;
-}
 `;
 
 class App extends Component {
@@ -44,9 +40,9 @@ const Body = styled.div`
 `;
 
 const LinkWrapper = styled.div`
-  font-family: "Permanent Marker", cursive;
+  font-family: 'Faster One', cursive;
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
   padding: 10px;
   border-style: solid;
   border-color: #ff3399;

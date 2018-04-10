@@ -56,8 +56,8 @@ class MixtapeList extends Component {
         created_for: "",
         dedication: ""
       }
-    })
-    this.toggleNewMixtapeForm()
+    });
+    this.toggleNewMixtapeForm();
   };
 
   render() {
@@ -70,10 +70,13 @@ class MixtapeList extends Component {
               {this.state.mixtapes.map(mixtape => {
                 return (
                   <CardWrapper>
-                    <Card key={mixtape.id}>
+                    <Card
+                      style={{ padding: "10px", margin: "35px" }}
+                      key={mixtape.id}
+                    >
                       <Link to={`/mixtapes/${mixtape.id}`}>
                         <Image
-                          src="https://i.imgur.com/bbkj8Xo.jpg"
+                          src="https://i.imgur.com/VxqEVcR.jpg"
                           alt="cassette tape"
                         />
                         <Card.Content>
@@ -144,5 +147,5 @@ const CardWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-margin: 30px 0px;
-`
+  margin: 30px 0px;
+`;
