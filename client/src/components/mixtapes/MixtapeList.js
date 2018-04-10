@@ -64,6 +64,31 @@ class MixtapeList extends Component {
       <PageWrapper>
         <Container>
           <h1>Currently On The Mix:</h1>
+          <MixtapeWrapper>
+            <FlexCards>
+              {this.state.mixtapes.map(mixtape => {
+                return (
+                  <Card key={mixtape.id}>
+                    <Link to={`/mixtapes/${mixtape.id}`}>
+                      <Image
+                        src="https://i.imgur.com/bbkj8Xo.jpg"
+                        alt="cassette tape"
+                      />
+                      <Card.Content>
+                        <Card.Header>{mixtape.title}</Card.Header>
+                        <Card.Meta>Created by: {mixtape.created_by}</Card.Meta>
+                        <Card.Meta>
+                          Created for: {mixtape.created_for}
+                        </Card.Meta>
+                        <Card.Meta>Dedication: {mixtape.dedication}</Card.Meta>
+                      </Card.Content>
+                    </Link>
+                  </Card>
+                );
+              })}
+            </FlexCards>
+          </MixtapeWrapper>
+          {this.state.err}
           <Button primary onClick={this.toggleNewMixtapeForm}>
             Create New Mixtape
           </Button>
@@ -74,26 +99,6 @@ class MixtapeList extends Component {
               newMixtape={this.state.newMixtape}
             />
           ) : null}
-          <MixtapeWrapper>
-            <FlexCards>
-              {this.state.mixtapes.map(mixtape => {
-                return (
-                  <Card key={mixtape.id}>
-                    <Link to={`/mixtapes/${mixtape.id}`}>
-                    <Image src="https://i.imgur.com/bbkj8Xo.jpg" alt="cassette tape"/>
-                      <Card.Content>
-                        <Card.Header>{mixtape.title}</Card.Header>
-                        <Card.Meta>Created by: {mixtape.created_by}</Card.Meta>
-                        <Card.Meta>Created for: {mixtape.created_for}</Card.Meta>
-                        <Card.Meta>Dedication: {mixtape.dedication}</Card.Meta>
-                      </Card.Content>
-                    </Link>
-                  </Card>
-                );
-              })}
-            </FlexCards>
-          </MixtapeWrapper>
-          {this.state.err}
         </Container>
       </PageWrapper>
     );
@@ -102,11 +107,19 @@ class MixtapeList extends Component {
 
 export default MixtapeList;
 
-const PageWrapper = styled.div`  
-        text-align: center;
+const PageWrapper = styled.div`
+  text-align: center;
+
+  h1 {
+    font-family: 'Faster One', cursive;
+    padding: 10px;
+  }
 `;
 
-const MixtapeWrapper = styled.div``;
+const MixtapeWrapper = styled.div`
+  font-family: "Permanent Marker", cursive;
+  margin: 10px;
+`;
 
 const FlexCards = styled.div`
   display: flex;
@@ -114,4 +127,4 @@ const FlexCards = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   align-content: flex-start;
-`
+`;
