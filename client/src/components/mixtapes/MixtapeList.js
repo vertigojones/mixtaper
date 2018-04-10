@@ -80,6 +80,7 @@ class MixtapeList extends Component {
                 return (
                   <Card key={mixtape.id}>
                     <Link to={`/mixtapes/${mixtape.id}`}>
+                    <Image src="https://i.imgur.com/bbkj8Xo.jpg" alt="cassette tape"/>
                       <Card.Content>
                         <Card.Header>{mixtape.title}</Card.Header>
                         <Card.Meta>Created by: {mixtape.created_by}</Card.Meta>
@@ -101,7 +102,9 @@ class MixtapeList extends Component {
 
 export default MixtapeList;
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`  
+        text-align: center;
+`;
 
 const MixtapeWrapper = styled.div``;
 
