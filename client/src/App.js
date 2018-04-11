@@ -36,7 +36,16 @@ class App extends Component {
 export default App;
 
 const Body = styled.div`
-  height: 100%;
+  /* height: 100%; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("https://i.imgur.com/u1bGOfU.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 `;
 
 const LinkWrapper = styled.div`

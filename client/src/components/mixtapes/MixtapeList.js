@@ -76,7 +76,7 @@ class MixtapeList extends Component {
                     >
                       <Link to={`/mixtapes/${mixtape.id}`}>
                         <Image
-                          src="https://i.imgur.com/VxqEVcR.jpg"
+                          src="https://i.imgur.com/Cizufws.png?1"
                           alt="cassette tape"
                         />
                         <Card.Content>
@@ -124,7 +124,9 @@ const PageWrapper = styled.div`
 
   h1 {
     font-family: "Press Start 2P", cursive;
-    padding: 10px;
+    padding: 40px;
+    color: red;
+    text-shadow: 1px 1px black;
   }
 `;
 

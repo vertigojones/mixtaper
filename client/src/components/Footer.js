@@ -19,7 +19,6 @@ const FooterStyles = styled.div`
   background-color: #ff3399;
   color: #66ff33;
   text-align: center;
-  margin-top: 20px;
 
   h4 {
     font-family: 'Press Start 2P', cursive;

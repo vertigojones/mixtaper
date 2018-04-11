@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 import EditMixtapeForm from "./EditMixtapeForm";
-import Iframe from "react-iframe";
+// import Iframe from "react-iframe";
 
 class SingleMixtape extends Component {
   state = {
@@ -56,15 +56,16 @@ class SingleMixtape extends Component {
   render() {
     return (
       <PageWrapper>
+        <h1>Now Playing:</h1>
         <MixtapeWrapper>
           <Background>
             <BackgroundText>
-              <h1>{this.state.mixtape.title}</h1>
+              <h2>{this.state.mixtape.title}</h2>
             </BackgroundText>
           </Background>
-          <h2>Created by {this.state.mixtape.created_by}</h2>
-          <h2>Created for {this.state.mixtape.created_for}</h2>
-          <h2>Dedication: {this.state.mixtape.dedication}</h2>
+          <h3>Created by {this.state.mixtape.created_by}</h3>
+          <h3>Created for {this.state.mixtape.created_for}</h3>
+          <h3>Dedication: {this.state.mixtape.dedication}</h3>
         </MixtapeWrapper>
         <ButtonWrapper>
           <Button negative onClick={this.deleteMixtape}>
@@ -104,11 +105,18 @@ const PageWrapper = styled.div`
   text-align: center;
 
   h1 {
+    font-family: "Press Start 2P", cursive;
+    padding: 40px;
+    color: red;
+    text-shadow: 1px 1px black;
+  }
+
+  h2 {
     font-family: "Permanent Marker", cursive;
     font-size: 32px;
   }
 
-  h2 {
+  h3 {
     font-family: "Permanent Marker", cursive;
     font-size: 21px;
   }
@@ -137,4 +145,4 @@ const ButtonWrapper = styled.div`
 
 const SearchWrapper = styled.div`
   margin: 30px 0px;
-`
+`;
