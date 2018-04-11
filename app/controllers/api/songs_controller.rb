@@ -1,7 +1,7 @@
 class Api::SongsController < ApplicationController
     def index
         @mixtape = Mixtape.find(params[:mixtape_id])
-        @songs = @artist.songs
+        @songs = @mixtape.songs
         render json: {
           songs: @songs
         }

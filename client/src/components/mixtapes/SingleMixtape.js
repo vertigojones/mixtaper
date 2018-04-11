@@ -83,7 +83,7 @@ class SingleMixtape extends Component {
           />
         ) : null}
         <SearchWrapper>
-          <Iframe
+          {/* <Iframe
             url="https://widgets.itunes.apple.com/widget.html?c=us&brc=FFFFFF&blc=FFFFFF&trc=FFFFFF&tlc=FFFFFF&d=&t=&m=music&e=album&w=250&h=300&ids=&wt=search&partnerId=&affiliate_id=&at=&ct="
             width="450px"
             height="450px"
@@ -91,7 +91,7 @@ class SingleMixtape extends Component {
             className="myClassname"
             display="initial"
             position="relative"
-          />
+          /> */}
         </SearchWrapper>
       </PageWrapper>
     );
