@@ -25,7 +25,7 @@ class MixtapeList extends Component {
   getAllMixtapes = async () => {
     try {
       const res = await axios.get("/api/mixtapes");
-      this.setState({ mixtapes: res.data });
+      this.setState({ mixtapes: res.data.mixtapes });
       console.log(this.state);
     } catch (err) {
       console.log(err);

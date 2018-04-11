@@ -21,10 +21,10 @@ class SingleMixtape extends Component {
     const mixtapeId = this.props.match.params.id;
     const res = await axios.get(`/api/mixtapes/${mixtapeId}`);
     this.setState({
-      mixtape: res.data,
+      mixtape: res.data.mixtape,
       songs: res.data.songs
     });
-    console.log(res.data.songs);
+    console.log(res.data);
   };
 
   toggleEdit = () => {
@@ -91,16 +91,16 @@ class SingleMixtape extends Component {
             songs={this.state.songs}
           />
         </SonglistWrapper>
-        <SearchWrapper>
+        <PlayerWrapper>
           <iframe
             src="https://open.spotify.com/embed?uri=spotify:user:owenliversidge:playlist:3iH9QdPF1F3J1EIvsJ1avn&theme=white"
-            width="350"
+            width="75%"
             height="350"
             frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
           />
-        </SearchWrapper>
+        </PlayerWrapper>
       </PageWrapper>
     );
   }
@@ -152,7 +152,7 @@ const ButtonWrapper = styled.div`
   margin: 30px 0px;
 `;
 
-const SearchWrapper = styled.div`
+const PlayerWrapper = styled.div`
   margin: 30px 0px;
 `;
 

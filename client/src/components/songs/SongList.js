@@ -67,7 +67,7 @@ class SongList extends Component {
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.state.songs.map(song => {
+              {this.props.songs.map(song => {
                 return (
                   <Table.Row key={song.id}>
                     <Table.Cell>{song.artist}</Table.Cell>
@@ -90,4 +90,9 @@ export default SongList;
 
 const SongListWrapper = styled.div``;
 
-const TableWrapper = styled.div``;
+const TableWrapper = styled.div`
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding: 30px;
+`;

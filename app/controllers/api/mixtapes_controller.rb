@@ -1,19 +1,26 @@
 class Api::MixtapesController < ApplicationController
     def index
         @mixtapes = Mixtape.all
-        render json: @mixtapes
+        
+        render json: {
+          mixtapes:  @mixtapes
+        }
       end
     
       def create
         @mixtape = Mixtape.create!(mixtape_params)
-    
-        render json: @mixtape
+
+        render json: @mixtapes
       end
     
       def show
         @mixtape = Mixtape.find(params[:id])
-    
-        render json: @mixtape
+
+        @songs = @mixtape.songs
+        render json: {
+          mixtape: @mixtape,
+          songs: @songs
+        }   
       end
     
       def update
