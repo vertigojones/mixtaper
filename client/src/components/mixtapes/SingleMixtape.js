@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { Button } from "semantic-ui-react";
+import { Button, Table } from "semantic-ui-react";
 import EditMixtapeForm from "./EditMixtapeForm";
-// import Iframe from "react-iframe";
+import SongList from "../songs/SongList";
 
 class SingleMixtape extends Component {
   state = {
     mixtape: {},
     songs: [],
-    showEditMixtape: false
+    showEditMixtape: false,
+    showCreateSongForm: false
   };
 
   componentDidMount() {
@@ -83,16 +84,22 @@ class SingleMixtape extends Component {
             mixtape={this.state.mixtape}
           />
         ) : null}
+        <SonglistWrapper>
+          <SongList
+            mixtapeId={this.state.mixtape.id}
+            getSingleMixtape={this.getSingleMixtape}
+            songs={this.state.songs}
+          />
+        </SonglistWrapper>
         <SearchWrapper>
-          {/* <Iframe
-            url="https://widgets.itunes.apple.com/widget.html?c=us&brc=FFFFFF&blc=FFFFFF&trc=FFFFFF&tlc=FFFFFF&d=&t=&m=music&e=album&w=250&h=300&ids=&wt=search&partnerId=&affiliate_id=&at=&ct="
-            width="450px"
-            height="450px"
-            id="myId"
-            className="myClassname"
-            display="initial"
-            position="relative"
-          /> */}
+          <iframe
+            src="https://open.spotify.com/embed?uri=spotify:user:owenliversidge:playlist:3iH9QdPF1F3J1EIvsJ1avn&theme=white"
+            width="350"
+            height="350"
+            frameborder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          />
         </SearchWrapper>
       </PageWrapper>
     );
@@ -119,6 +126,8 @@ const PageWrapper = styled.div`
   h3 {
     font-family: "Permanent Marker", cursive;
     font-size: 21px;
+    color: navy;
+    text-shadow: 1px 1px #66ff33;
   }
 `;
 
@@ -146,3 +155,5 @@ const ButtonWrapper = styled.div`
 const SearchWrapper = styled.div`
   margin: 30px 0px;
 `;
+
+const SonglistWrapper = styled.div``;
