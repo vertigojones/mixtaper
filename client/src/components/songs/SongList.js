@@ -5,22 +5,6 @@ import { Table, Button } from "semantic-ui-react";
 import NewSongForm from "./NewSongForm";
 import SingleSong from "./SingleSong";
 
-const colors = [
-  "red",
-  "orange",
-  "yellow",
-  "olive",
-  "green",
-  "teal",
-  "blue",
-  "violet",
-  "purple",
-  "pink",
-  "brown",
-  "grey",
-  "black"
-];
-
 class SongList extends Component {
   state = {
     songs: [],
@@ -62,7 +46,7 @@ class SongList extends Component {
 
   render() {
     return (
-      <div>
+      <SongListWrapper>
         <Button color="green" negative onClick={this.toggleSongForm}>
           Add Song
         </Button>
@@ -73,30 +57,37 @@ class SongList extends Component {
             newSong={this.state.newSong}
           />
         ) : null}
-        <Table celled fixed singleLine>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Artist</Table.HeaderCell>
-              <Table.HeaderCell>Title</Table.HeaderCell>
-              <Table.HeaderCell>Length</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {this.state.songs.map(song => {
-              return (
-                <Table.Row key={song.id}>
-                  <Table.Cell>{song.artist}</Table.Cell>
-                  <Table.Cell>{song.title}</Table.Cell>
-                  <Table.Cell>{song.length}</Table.Cell>
-                </Table.Row>
-              );
-            })}
-          </Table.Body>
-          {this.state.err}
-        </Table>
-      </div>
+        <TableWrapper>
+          <Table celled fixed singleLine>
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Artist</Table.HeaderCell>
+                <Table.HeaderCell>Title</Table.HeaderCell>
+                <Table.HeaderCell>Length</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {this.state.songs.map(song => {
+                return (
+                  <Table.Row key={song.id}>
+                    <Table.Cell>{song.artist}</Table.Cell>
+                    <Table.Cell>{song.title}</Table.Cell>
+                    <Table.Cell>{song.length}</Table.Cell>
+                  </Table.Row>
+                );
+                console.log(song);
+              })}
+            </Table.Body>
+            {this.state.err}
+          </Table>
+        </TableWrapper>
+      </SongListWrapper>
     );
   }
 }
 
 export default SongList;
+
+const SongListWrapper = styled.div``;
+
+const TableWrapper = styled.div``;

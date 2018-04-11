@@ -76,7 +76,7 @@ class MixtapeList extends Component {
                     >
                       <Link to={`/mixtapes/${mixtape.id}`}>
                         <Image
-                          src="https://i.imgur.com/Cizufws.png?1"
+                          src="https://i.imgur.com/XhyzwUd.png"
                           alt="cassette tape"
                         />
                         <Card.Content>

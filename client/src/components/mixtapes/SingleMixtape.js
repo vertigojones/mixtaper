@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { Button, Table } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import EditMixtapeForm from "./EditMixtapeForm";
 import SongList from "../songs/SongList";
 
@@ -22,9 +22,9 @@ class SingleMixtape extends Component {
     const res = await axios.get(`/api/mixtapes/${mixtapeId}`);
     this.setState({
       mixtape: res.data,
-      songs: res.data
+      songs: res.data.songs
     });
-    console.log(res.data);
+    console.log(res.data.songs);
   };
 
   toggleEdit = () => {
@@ -96,7 +96,7 @@ class SingleMixtape extends Component {
             src="https://open.spotify.com/embed?uri=spotify:user:owenliversidge:playlist:3iH9QdPF1F3J1EIvsJ1avn&theme=white"
             width="350"
             height="350"
-            frameborder="0"
+            frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
           />
