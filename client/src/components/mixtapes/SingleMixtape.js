@@ -93,10 +93,12 @@ class SingleMixtape extends Component {
         </SonglistWrapper>
         <PlayerWrapper>
           <iframe
-            src="https://open.spotify.com/embed?uri=spotify:user:owenliversidge:playlist:3iH9QdPF1F3J1EIvsJ1avn&theme=white"
-            width="75%"
-            height="350"
-            frameBorder="0"
+            src={`https://open.spotify.com/embed?uri=${
+              this.state.mixtape.player_url
+            }&theme=white`}
+            width="80%"
+            height="380"
+            frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
           />

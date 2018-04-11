@@ -12,7 +12,8 @@ class MixtapeList extends Component {
       title: "",
       created_by: "",
       created_for: "",
-      dedication: ""
+      dedication: "",
+      player_url: ''
     },
     mixtapeFormOpen: false,
     error: ""
