@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { Card, Image, Grid, List, Divider, Button } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 import EditMixtapeForm from "./EditMixtapeForm";
+import Iframe from "react-iframe";
 
 class SingleMixtape extends Component {
   state = {
@@ -82,6 +82,17 @@ class SingleMixtape extends Component {
             mixtape={this.state.mixtape}
           />
         ) : null}
+        <SearchWrapper>
+          <Iframe
+            url="https://widgets.itunes.apple.com/widget.html?c=us&brc=FFFFFF&blc=FFFFFF&trc=FFFFFF&tlc=FFFFFF&d=&t=&m=music&e=album&w=250&h=300&ids=&wt=search&partnerId=&affiliate_id=&at=&ct="
+            width="450px"
+            height="450px"
+            id="myId"
+            className="myClassname"
+            display="initial"
+            position="relative"
+          />
+        </SearchWrapper>
       </PageWrapper>
     );
   }
@@ -111,6 +122,7 @@ const Background = styled.div`
   background-repeat: no-repeat;
   display: flex;
 `;
+
 const BackgroundText = styled.div`
   margin: 75px auto;
 `;
@@ -122,3 +134,7 @@ const MixtapeWrapper = styled.div`
 const ButtonWrapper = styled.div`
   margin: 30px 0px;
 `;
+
+const SearchWrapper = styled.div`
+  margin: 30px 0px;
+`

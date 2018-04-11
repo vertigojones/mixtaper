@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import { Container, Modal, Button, Card, Image } from "semantic-ui-react";
+import { Container, Button, Card, Image } from "semantic-ui-react";
 import NewMixtapeForm from "./NewMixtapeForm";
 
 class MixtapeList extends Component {
