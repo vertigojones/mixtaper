@@ -11,6 +11,7 @@ injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Faster+One|Fontdiner+Swanky');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 `;
 
 class App extends Component {

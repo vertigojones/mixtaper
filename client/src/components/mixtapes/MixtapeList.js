@@ -144,7 +144,7 @@ const PageWrapper = styled.div`
   }
 
   p {
-    font-family: "Permanent Marker", cursive;
+    font-family: 'Fredoka One', cursive;
     font-size: 18px;
     margin: 20px;
     color: black;

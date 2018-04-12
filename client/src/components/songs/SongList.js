@@ -47,13 +47,6 @@ class SongList extends Component {
   render() {
     return (
       <SongListWrapper>
-        {this.state.showNewSongForm ? (
-          <NewSongForm
-            handleChange={this.handleChange}
-            createSong={this.createSong}
-            newSong={this.state.newSong}
-          />
-        ) : null}
         <TableWrapper>
           <Table celled fixed singleLine>
             <Table.Header>
@@ -83,6 +76,13 @@ class SongList extends Component {
             Add Song
           </Button>
         </ButtonWrapper>
+        {this.state.showNewSongForm ? (
+          <NewSongForm
+            handleChange={this.handleChange}
+            createSong={this.createSong}
+            newSong={this.state.newSong}
+          />
+        ) : null}
       </SongListWrapper>
     );
   }
@@ -95,7 +95,7 @@ const SongListWrapper = styled.div`
 `;
 
 const TableWrapper = styled.div`
-  width: 100%;
+  width: 60%;
   display: block;
   margin: 0 auto;
   padding: 30px;
