@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Table, Button } from "semantic-ui-react";
 import NewSongForm from "./NewSongForm";
-import SingleSong from "./SingleSong";
+import DeleteSong from "./DeleteSong";
 
 class SongList extends Component {
   state = {
@@ -54,6 +54,7 @@ class SongList extends Component {
                 <Table.HeaderCell>Artist</Table.HeaderCell>
                 <Table.HeaderCell>Title</Table.HeaderCell>
                 <Table.HeaderCell>Length</Table.HeaderCell>
+                <Table.HeaderCell />
               </Table.Row>
             </Table.Header>
             <Table.Body>
@@ -63,6 +64,13 @@ class SongList extends Component {
                     <Table.Cell>{song.artist}</Table.Cell>
                     <Table.Cell>{song.title}</Table.Cell>
                     <Table.Cell>{song.length}</Table.Cell>
+                    <Table.Cell>
+                      <DeleteSong
+                        song={song.id}
+                        mixtapeId={this.props.mixtapeId}
+                        getSingleMixtape={this.props.getSingleMixtape}
+                      />
+                    </Table.Cell>
                   </Table.Row>
                 );
                 console.log(song);
@@ -90,12 +98,10 @@ class SongList extends Component {
 
 export default SongList;
 
-const SongListWrapper = styled.div`
-  
-`;
+const SongListWrapper = styled.div``;
 
 const TableWrapper = styled.div`
-  width: 60%;
+  width: 70%;
   display: block;
   margin: 0 auto;
   padding: 30px;

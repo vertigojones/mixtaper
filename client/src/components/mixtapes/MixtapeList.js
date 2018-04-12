@@ -147,7 +147,7 @@ const PageWrapper = styled.div`
     font-family: 'Fredoka One', cursive;
     font-size: 18px;
     margin: 20px;
-    color: black;
+    color: navy;
     text-shadow: 1px 1px white;
   }
 `;
