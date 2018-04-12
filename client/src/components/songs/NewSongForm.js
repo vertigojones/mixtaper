@@ -7,6 +7,15 @@ class NewSongForm extends Component {
     return (
       <FormWrapper>
         <Form onSubmit={this.props.createSong}>
+        <Form.Field>
+            <label>Track:</label>
+            <input
+              placeholder="Track"
+              name="track"
+              onChange={this.props.handleChange}
+              value={this.props.newSong.track}
+            />
+          </Form.Field>
           <Form.Field>
             <label>Artist:</label>
             <input
@@ -23,15 +32,6 @@ class NewSongForm extends Component {
               name="title"
               onChange={this.props.handleChange}
               value={this.props.newSong.title}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Length:</label>
-            <input
-              placeholder="Length"
-              name="length"
-              onChange={this.props.handleChange}
-              value={this.props.newSong.length}
             />
           </Form.Field>
           <Button color="green" type="submit">

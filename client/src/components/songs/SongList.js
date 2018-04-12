@@ -9,9 +9,9 @@ class SongList extends Component {
   state = {
     songs: [],
     newSong: {
+      track: 0,
       artist: "",
-      title: "",
-      length: 0
+      title: ""
     },
     toggleEditForm: false,
     comments: []
@@ -25,9 +25,9 @@ class SongList extends Component {
     );
     this.setState({
       newSong: {
+        track: 0,
         artist: "",
-        title: "",
-        length: 0
+        title: ""
       }
     });
     this.props.getSingleMixtape();
@@ -51,19 +51,20 @@ class SongList extends Component {
           <Table celled fixed singleLine>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Artist</Table.HeaderCell>
-                <Table.HeaderCell>Title</Table.HeaderCell>
-                <Table.HeaderCell>Length</Table.HeaderCell>
+                <Table.HeaderCell>Track:</Table.HeaderCell>
+                <Table.HeaderCell>Artist:</Table.HeaderCell>
+                <Table.HeaderCell>Song:</Table.HeaderCell>
                 <Table.HeaderCell />
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.songs.map(song => {
+              {this.props.songs.sort((a,b) => a.track - b.track)
+              .map(song => {
                 return (
                   <Table.Row key={song.id}>
+                    <Table.Cell>{song.track}</Table.Cell>
                     <Table.Cell>{song.artist}</Table.Cell>
                     <Table.Cell>{song.title}</Table.Cell>
-                    <Table.Cell>{song.length}</Table.Cell>
                     <Table.Cell>
                       <DeleteSong
                         song={song.id}
@@ -101,7 +102,7 @@ export default SongList;
 const SongListWrapper = styled.div``;
 
 const TableWrapper = styled.div`
-  width: 70%;
+  width: 80%;
   display: block;
   margin: 0 auto;
   padding: 30px;

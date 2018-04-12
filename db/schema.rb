@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411225739) do
+ActiveRecord::Schema.define(version: 20180412181020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20180411225739) do
     t.bigint "mixtape_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "track"
     t.index ["mixtape_id"], name: "index_songs_on_mixtape_id"
   end
 
