@@ -170,5 +170,7 @@ const PlayerWrapper = styled.div`
 const SonglistWrapper = styled.div``;
 
 const CommentlistWrapper = styled.div`
-
+  width: 75%;
+  display: block;
+  margin: 0 auto;
 `;

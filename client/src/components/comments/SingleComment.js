@@ -4,7 +4,7 @@ import DeleteConfirm from "./DeleteConfirm";
 import { Button } from "semantic-ui-react";
 import axios from "axios";
 
-class Comment extends Component {
+class SingleComment extends Component {
   state = {
     comment: {
       post: "",
@@ -31,15 +31,14 @@ class Comment extends Component {
     await this.props.getSingleMixtape();
     this.toggleDelete();
   };
+
   render() {
     return (
       <div>
-        <h3>{this.props.comment.post}</h3>
-        <h3>{this.props.comment.posted_by}</h3>
-
+        <h3>"{this.props.comment.post}"</h3>
+        <h3>Posted by: {this.props.comment.posted_by}</h3>
         <Button primary onClick={this.toggleEdit}>Edit</Button>
         <Button negative onClick={this.toggleDelete}>Delete</Button>
-
         {this.state.editForm ? (
           <EditCommentForm
             toggleEdit={this.toggleEdit}
@@ -60,4 +59,4 @@ class Comment extends Component {
   }
 }
 
-export default Comment;
+export default SingleComment;

@@ -17,10 +17,13 @@ class Api::MixtapesController < ApplicationController
         @mixtape = Mixtape.find(params[:id])
 
         @songs = @mixtape.songs
+        @comments = @mixtape.comments
         render json: {
           mixtape: @mixtape,
-          songs: @songs
-        }   
+          songs: @songs,
+          comments: @comments
+        } 
+  
       end
     
       def update

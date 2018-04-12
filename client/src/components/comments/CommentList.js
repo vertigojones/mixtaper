@@ -28,6 +28,7 @@ class CommentList extends Component {
       }
     });
     this.props.getSingleMixtape();
+    this.toggleCommentForm();
   };
 
   handleChange = event => {
@@ -48,27 +49,29 @@ class CommentList extends Component {
           <Button primary onClick={this.toggleCommentForm}>
             New Comment
           </Button>
-          {this.state.showCreateCommentForm ? (
-            <NewCommentForm
-              handleChange={this.handleChange}
-              createComment={this.createComment}
-              newComment={this.state.newComment}
-            />
-          ) : null}
         </ButtonWrapper>
-        {this.state.comments
-          .slice(0)
-          .reverse()
-          .map(comment => {
-            return (
-              <SingleComment
-                key={comment.id}
-                comment={comment}
-                mixtapeId={this.props.mixtapeId}
-                getSingleMixtape={this.props.getSingleMixtape}
-              />
-            );
-          })}
+        {this.state.showCreateCommentForm ? (
+          <NewCommentForm
+            handleChange={this.handleChange}
+            createComment={this.createComment}
+            newComment={this.state.newComment}
+          />
+        ) : null}
+        <CommentWrapper>
+          {this.props.comments
+            .slice(0)
+            .reverse()
+            .map(comment => {
+              return (
+                <SingleComment
+                  key={comment.id}
+                  comment={comment}
+                  mixtapeId={this.props.mixtapeId}
+                  getSingleMixtape={this.props.getSingleMixtape}
+                />
+              );
+            })}
+        </CommentWrapper>
       </div>
     );
   }
@@ -76,6 +79,9 @@ class CommentList extends Component {
 
 export default CommentList;
 
+const CommentWrapper = styled.div`
+  background-image: url("https://i.imgur.com/SY317To.jpg");
+`;
 const ButtonWrapper = styled.div`
   margin: 30px 0px;
 `;
