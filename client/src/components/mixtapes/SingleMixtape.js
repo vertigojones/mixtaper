@@ -4,11 +4,13 @@ import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 import EditMixtapeForm from "./EditMixtapeForm";
 import SongList from "../songs/SongList";
+import CommentList from "../comments/CommentList";
 
 class SingleMixtape extends Component {
   state = {
     mixtape: {},
     songs: [],
+    comments: [],
     showEditMixtape: false,
     showCreateSongForm: false
   };
@@ -22,7 +24,8 @@ class SingleMixtape extends Component {
     const res = await axios.get(`/api/mixtapes/${mixtapeId}`);
     this.setState({
       mixtape: res.data.mixtape,
-      songs: res.data.songs
+      songs: res.data.songs,
+      comments: res.data.comments
     });
     console.log(res.data);
   };
@@ -50,7 +53,6 @@ class SingleMixtape extends Component {
   deleteMixtape = async () => {
     const mixtapeId = this.props.match.params.id;
     await axios.delete(`/api/mixtapes/${mixtapeId}`);
-    console.log(this.props.match.params.id);
     this.props.history.push("/");
   };
 
@@ -103,6 +105,13 @@ class SingleMixtape extends Component {
             allow="encrypted-media"
           />
         </PlayerWrapper>
+        <CommentlistWrapper>
+          <CommentList
+            mixtapeId={this.state.mixtape.id}
+            getSingleMixtape={this.getSingleMixtape}
+            comments={this.state.comments}
+          />
+        </CommentlistWrapper>
       </PageWrapper>
     );
   }
@@ -159,3 +168,7 @@ const PlayerWrapper = styled.div`
 `;
 
 const SonglistWrapper = styled.div``;
+
+const CommentlistWrapper = styled.div`
+
+`;
