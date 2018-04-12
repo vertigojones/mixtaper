@@ -20,7 +20,7 @@ class SongList extends Component {
   createSong = async event => {
     event.preventDefault();
     const response = await axios.post(
-      `/api/songs/${this.props.mixtapeId}/songs`,
+      `/api/mixtapes/${this.props.mixtapeId}/songs`,
       this.state.newSong
     );
     this.setState({
@@ -91,7 +91,7 @@ class SongList extends Component {
 export default SongList;
 
 const SongListWrapper = styled.div`
-  font-family: "Permanent Marker", cursive;
+  
 `;
 
 const TableWrapper = styled.div`
@@ -99,6 +99,7 @@ const TableWrapper = styled.div`
   display: block;
   margin: 0 auto;
   padding: 30px;
+  font-family: "Permanent Marker", cursive;
 `;
 
 const ButtonWrapper = styled.div`
