@@ -26,6 +26,11 @@ grunge.songs.create!(track: 14, artist: "Mudhoney", title: "Pump It Up", length:
 grunge.songs.create!(track: 15, artist: "Pixies", title: "Where Is My Mind?", length: 3.51)
 grunge.songs.create!(track: 16, artist: "Dinosaur Jr", title: "Feel The Pain", length: 4.20)
 
+grunge.comments.create!(post: "Great mix!!!", posted_by: "Owen")
+grunge.comments.create!(post: "Needs more Nirvana ... like ALL of them!", posted_by: "Dave Grohl")
+
+
+
 eighties_rock = Mixtape.create!({
     title: "80's Rock",
     created_by: "Vince Neil's Hair",
@@ -50,5 +55,8 @@ eighties_rock.songs.create!(track: 13, artist: "Rainbow", title: "Since You Been
 eighties_rock.songs.create!(track: 14, artist: "Whitesnake", title: "Here I Go Again", length: 4.39)
 eighties_rock.songs.create!(track: 15, artist: "Def Leppard", title: "Animal", length: 4.05)
 eighties_rock.songs.create!(track: 16, artist: "Scorpions", title: "Rock You Like A Hurricane", length: 4.13)
+
+eighties_rock.comments.create!(post: "Duuuuuuuuude!!!", posted_by: "Bill & Ted")
+eighties_rock.comments.create!(post: "Takes me back to my big hair days!", posted_by: "James Royals")
 
 

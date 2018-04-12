@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412181020) do
+ActiveRecord::Schema.define(version: 20180412190118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "post"
+    t.string "posted_by"
+    t.bigint "mixtape_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mixtape_id"], name: "index_comments_on_mixtape_id"
+  end
 
   create_table "mixtapes", force: :cascade do |t|
     t.string "title"
@@ -36,5 +45,6 @@ ActiveRecord::Schema.define(version: 20180412181020) do
     t.index ["mixtape_id"], name: "index_songs_on_mixtape_id"
   end
 
+  add_foreign_key "comments", "mixtapes"
   add_foreign_key "songs", "mixtapes"
 end

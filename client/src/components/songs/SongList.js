@@ -58,8 +58,7 @@ class SongList extends Component {
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.songs.sort((a,b) => a.track - b.track)
-              .map(song => {
+              {this.props.songs.sort((a, b) => a.track - b.track).map(song => {
                 return (
                   <Table.Row key={song.id}>
                     <Table.Cell>{song.track}</Table.Cell>
