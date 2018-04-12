@@ -13,7 +13,7 @@ class MixtapeList extends Component {
       created_by: "",
       created_for: "",
       dedication: "",
-      player_url: ''
+      player_url: ""
     },
     mixtapeFormOpen: false,
     error: ""
@@ -55,7 +55,8 @@ class MixtapeList extends Component {
         title: "",
         created_by: "",
         created_for: "",
-        dedication: ""
+        dedication: "",
+        player_url: ""
       }
     });
     this.toggleNewMixtapeForm();
@@ -66,6 +67,18 @@ class MixtapeList extends Component {
       <PageWrapper>
         <Container>
           <h1>Currently On The Mix:</h1>
+          <p>
+            Instructions: Mixtaper is a throwback to the days when creating a
+            mixtape was considered an art form. For those not in the know, a
+            mixtape is what existed before the "playlist" was invented. This
+            works the same way, but just like you were limited to the length of
+            a cassette tape, you are instead limited to the amount of songs you
+            can use - 16 to be exact. So, choose your songs carefully! For
+            integrating the Spotify player, just click the "more" (...) button
+            in your playlist, then "share", and finally the "URI" button. Now
+            paste that key into the "Spotify URI" field and you're all set.
+            Happy listening!
+          </p>
           <MixtapeWrapper>
             <FlexCards>
               {this.state.mixtapes.map(mixtape => {
@@ -129,12 +142,20 @@ const PageWrapper = styled.div`
     color: red;
     text-shadow: 1px 1px black;
   }
+
+  p {
+    font-family: "Permanent Marker", cursive;
+    font-size: 18px;
+    margin: 20px;
+    color: black;
+    text-shadow: 1px 1px white;
+  }
 `;
 
 const MixtapeWrapper = styled.div`
   font-family: "Permanent Marker", cursive;
   color: black;
-  margin: 10px;
+  padding: 6px;
 `;
 
 const FlexCards = styled.div`

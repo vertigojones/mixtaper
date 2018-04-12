@@ -45,6 +45,16 @@ class EditMixtapeForm extends Component {
             value={this.props.mixtape.dedication}
           />
         </Form.Field>
+        <Form.Field>
+          <label>Spotify URI:</label>
+          <Input
+            placeholder="player_url"
+            name="player_url"
+            type="text"
+            onChange={this.props.handleChange}
+            value={this.props.mixtape.player_url}
+          />
+        </Form.Field>
         <Form.Button color="green" type="submit">
           Edit Mixtape
         </Form.Button>

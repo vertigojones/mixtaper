@@ -96,9 +96,9 @@ class SingleMixtape extends Component {
             src={`https://open.spotify.com/embed?uri=${
               this.state.mixtape.player_url
             }&theme=white`}
-            width="80%"
+            width="90%"
             height="380"
-            frameborder="0"
+            frameBorder="0"
             allowtransparency="true"
             allow="encrypted-media"
           />

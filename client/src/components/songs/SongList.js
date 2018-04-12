@@ -91,7 +91,7 @@ export default SongList;
 const SongListWrapper = styled.div``;
 
 const TableWrapper = styled.div`
-    width: 90%;
+    width: 100%;
     display: block;
     margin: 0 auto;
     padding: 30px;
