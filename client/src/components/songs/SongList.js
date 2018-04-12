@@ -47,11 +47,6 @@ class SongList extends Component {
   render() {
     return (
       <SongListWrapper>
-        <ButtonWrapper>
-          <Button primary onClick={this.toggleSongForm}>
-            Add Song
-          </Button>
-        </ButtonWrapper>
         {this.state.showNewSongForm ? (
           <NewSongForm
             handleChange={this.handleChange}
@@ -83,6 +78,11 @@ class SongList extends Component {
             {this.state.err}
           </Table>
         </TableWrapper>
+        <ButtonWrapper>
+          <Button primary onClick={this.toggleSongForm}>
+            Add Song
+          </Button>
+        </ButtonWrapper>
       </SongListWrapper>
     );
   }
