@@ -47,9 +47,11 @@ class SongList extends Component {
   render() {
     return (
       <SongListWrapper>
-        <Button color="green" negative onClick={this.toggleSongForm}>
-          Add Song
-        </Button>
+        <ButtonWrapper>
+          <Button primary onClick={this.toggleSongForm}>
+            Add Song
+          </Button>
+        </ButtonWrapper>
         {this.state.showNewSongForm ? (
           <NewSongForm
             handleChange={this.handleChange}
@@ -88,11 +90,17 @@ class SongList extends Component {
 
 export default SongList;
 
-const SongListWrapper = styled.div``;
+const SongListWrapper = styled.div`
+  font-family: "Permanent Marker", cursive;
+`;
 
 const TableWrapper = styled.div`
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    padding: 30px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 30px;
+`;
+
+const ButtonWrapper = styled.div`
+  margin: 30px 0px;
 `;
