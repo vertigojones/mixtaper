@@ -106,6 +106,7 @@ const TableWrapper = styled.div`
   margin: 0 auto;
   padding: 30px;
   font-family: "Permanent Marker", cursive;
+  font-size: 16px;
 `;
 
 const ButtonWrapper = styled.div`

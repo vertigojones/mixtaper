@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import EditCommentForm from "./EditCommentForm";
 import DeleteConfirm from "./DeleteConfirm";
-import styled from 'styled-components'
+import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 import axios from "axios";
 
@@ -35,7 +35,7 @@ class SingleComment extends Component {
 
   render() {
     return (
-      <div>
+      <CommentWrapper>
         <h3>"{this.props.comment.post}"</h3>
         <h3>Posted by: {this.props.comment.posted_by}</h3>
         <ButtonWrapper>
@@ -60,13 +60,17 @@ class SingleComment extends Component {
             cancelDelete={this.toggleDelete}
           />
         ) : null}
-        <hr />
-      </div>
+      </CommentWrapper>
     );
   }
 }
 
 export default SingleComment;
+
+const CommentWrapper = styled.div`
+  margin: 20px;
+  padding: 10px;
+`;
 
 const ButtonWrapper = styled.div`
   margin: 30px 0px;

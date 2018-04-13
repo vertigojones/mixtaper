@@ -80,7 +80,9 @@ class CommentList extends Component {
 export default CommentList;
 
 const CommentWrapper = styled.div`
-  background-image: url("https://i.imgur.com/SY317To.jpg");
+  background-image: url("https://i.imgur.com/hbjATe3.jpg");
+  background-size: cover;
+  margin: 10px;
 `;
 
 const ButtonWrapper = styled.div`
