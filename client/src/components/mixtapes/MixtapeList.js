@@ -4,6 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Container, Button, Card, Image } from "semantic-ui-react";
 import NewMixtapeForm from "./NewMixtapeForm";
+import RandomQuote from "../RandomQuote";
 
 class MixtapeList extends Component {
   state = {
@@ -66,7 +67,6 @@ class MixtapeList extends Component {
     return (
       <PageWrapper>
         <Container>
-          <h1>Currently On The Mix:</h1>
           <p>
             Instructions: Mixtaper is a throwback to the days when creating a
             mixtape was considered an art form. For those not in the know, a
@@ -79,6 +79,8 @@ class MixtapeList extends Component {
             paste that key into the "Spotify URI" field and you're all set.
             Happy listening!
           </p>
+          <RandomQuote />
+          <h1>Currently On The Mix:</h1>
           <MixtapeWrapper>
             <FlexCards>
               {this.state.mixtapes.map(mixtape => {
@@ -144,9 +146,9 @@ const PageWrapper = styled.div`
   }
 
   p {
-    font-family: 'Fredoka One', cursive;
+    font-family: "Fredoka One", cursive;
     font-size: 18px;
-    margin: 20px;
+    padding: 20px;
     color: navy;
     text-shadow: 1px 1px white;
   }
