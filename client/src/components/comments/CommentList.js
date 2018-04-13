@@ -82,6 +82,7 @@ export default CommentList;
 const CommentWrapper = styled.div`
   background-image: url("https://i.imgur.com/SY317To.jpg");
 `;
+
 const ButtonWrapper = styled.div`
   margin: 30px 0px;
 `;

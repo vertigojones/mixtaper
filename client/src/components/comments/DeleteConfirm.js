@@ -23,6 +23,7 @@ export default DeleteConfirm;
 const ConfirmWrapper = styled.div`
   color: navy;
   text-shadow: 1px 1px #66ff33;
+
   h4 {
     font-family: "Permanent Marker", cursive;
     margin: 10px;

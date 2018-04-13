@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import EditCommentForm from "./EditCommentForm";
 import DeleteConfirm from "./DeleteConfirm";
+import styled from 'styled-components'
 import { Button } from "semantic-ui-react";
 import axios from "axios";
 
@@ -37,8 +38,14 @@ class SingleComment extends Component {
       <div>
         <h3>"{this.props.comment.post}"</h3>
         <h3>Posted by: {this.props.comment.posted_by}</h3>
-        <Button primary onClick={this.toggleEdit}>Edit</Button>
-        <Button negative onClick={this.toggleDelete}>Delete</Button>
+        <ButtonWrapper>
+          <Button primary onClick={this.toggleEdit}>
+            Edit
+          </Button>
+          <Button negative onClick={this.toggleDelete}>
+            Delete
+          </Button>
+        </ButtonWrapper>
         {this.state.editForm ? (
           <EditCommentForm
             toggleEdit={this.toggleEdit}
@@ -60,3 +67,7 @@ class SingleComment extends Component {
 }
 
 export default SingleComment;
+
+const ButtonWrapper = styled.div`
+  margin: 30px 0px;
+`;
