@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Button } from "semantic-ui-react";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 class NewMixtapeForm extends Component {
   render() {
@@ -52,9 +52,11 @@ class NewMixtapeForm extends Component {
               value={this.props.newMixtape.player_url}
             />
           </Form.Field>
-          <Button color="green" type="submit">
-            Create Mixtape
-          </Button>
+          <ButtonWrapper>
+            <Button color="green" type="submit">
+              Create Mixtape
+            </Button>
+          </ButtonWrapper>
         </Form>
       </FormWrapper>
     );
@@ -67,4 +69,8 @@ const FormWrapper = styled.div`
   display: block;
   margin: 0 auto;
   width: 50%;
-`
+`;
+
+const ButtonWrapper = styled.div`
+  margin: 30px 0px;
+`;
