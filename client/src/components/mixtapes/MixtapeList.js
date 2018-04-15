@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Container, Button, Card, Image } from "semantic-ui-react";
 import NewMixtapeForm from "./NewMixtapeForm";
-import RandomQuote from "../RandomQuote";
+import RandomJoke from "../RandomJoke";
 
 class MixtapeList extends Component {
   state = {
@@ -79,7 +79,7 @@ class MixtapeList extends Component {
             paste that key into the "Spotify URI" field and you're all set.
             Happy listening!
           </p>
-          <RandomQuote />
+          <RandomJoke />
           <h1>Currently On The Mix:</h1>
           <MixtapeWrapper>
             <FlexCards>

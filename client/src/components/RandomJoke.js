@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-class RandomQuote extends Component {
+class RandomJoke extends Component {
   state = {
     chuck: []
   };
 
   componentDidMount() {
     axios.get("http://api.icndb.com/jokes/random").then(res => {
-      console.log("RESPONSE DATA", res.data);
+      console.log(res.data);
       this.setState({
         chuck: res.data
       });
@@ -21,16 +21,16 @@ class RandomQuote extends Component {
       return <div />;
     }
     return (
-      <QuoteWrapper>
+      <JokeWrapper>
         <h3>"{this.state.chuck.value.joke}"</h3>
-      </QuoteWrapper>
+      </JokeWrapper>
     );
   }
 }
 
-export default RandomQuote;
+export default RandomJoke;
 
-const QuoteWrapper = styled.div`
+const JokeWrapper = styled.div`
   margin: 30px;
 
   h3 {
