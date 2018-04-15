@@ -42,6 +42,6 @@ class Api::MixtapesController < ApplicationController
       private
     
       def mixtape_params
-        params.require(:mixtape).permit(:title, :created_by, :created_for, :dedication)
+        params.require(:mixtape).permit(:title, :created_by, :created_for, :dedication, :player_url)
       end
 end

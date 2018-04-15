@@ -60,7 +60,7 @@ class MixtapeList extends Component {
         player_url: ""
       }
     });
-    this.toggleNewMixtapeForm();
+    this.toggleNewMixtapeForm()
   };
 
   render() {
