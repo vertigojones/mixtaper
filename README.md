@@ -1,4 +1,4 @@
-### Mixtaper
+# Mixtaper
 
 Mixtaper is an app that brings back the lost art of creating a mixtape. Before playlists were invented, people would create mixtapes and compile their favorite songs together onto a single tape cassette. Sometimes those compilations would be personal, sometimes they were written for someone else (like a loved one). There were mixtapes created for special occasions, particular genres or artists, workouts, or just to listen to while driving to work. If you were writing a mix for a friend, it could be a way to emotionally connect with them and share your innermost feelings, in a way that you cannot personally put into words.
 
@@ -18,7 +18,7 @@ For giggles, Mixtaper pulls in random jokes from The Internet Chuck Norris Datab
 
 ---
 
-# Technologies:
+## Technologies:
 
 * Ruby on Rails
 * GitHub
@@ -27,7 +27,7 @@ For giggles, Mixtaper pulls in random jokes from The Internet Chuck Norris Datab
 * Spotify
 * The Internet Chuck Norris Database API
 
-# Version 2.0:
+## Version 2.0:
 
 * Integrate User login
 * Indexing for comments
