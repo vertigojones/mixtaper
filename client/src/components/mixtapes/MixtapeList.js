@@ -60,7 +60,8 @@ class MixtapeList extends Component {
         player_url: ""
       }
     });
-    this.toggleNewMixtapeForm()
+    this.toggleNewMixtapeForm();
+    this.getAllMixtapes();
   };
 
   render() {
@@ -70,14 +71,15 @@ class MixtapeList extends Component {
           <p>
             Instructions: Mixtaper is a throwback to the days when creating a
             mixtape was considered an art form. For those not in the know, a
-            mixtape is what existed before the "playlist" was invented. This
+            mixtape is what existed before the "playlist" was invented. Mixtaper
             works the same way, but just like you were limited to the length of
             a cassette tape, you are instead limited to the amount of songs you
             can use - 16 to be exact. So, choose your songs carefully! For
             integrating the Spotify player, just click the "more" (...) button
-            in your playlist, then "share", and finally the "URI" button. Now
-            paste that key into the "Spotify URI" field and you're all set.
-            Happy listening!
+            in your Spotify playlist, then "share", and finally the "URI"
+            button. Now paste that key into the "Spotify URI" field and you're
+            all set. Just make sure that Spotify remains open when you use this
+            app. Happy listening!
           </p>
           <RandomJoke />
           <h1>Currently On The Mix:</h1>
