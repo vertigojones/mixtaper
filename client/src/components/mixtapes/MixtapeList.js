@@ -51,14 +51,14 @@ class MixtapeList extends Component {
     const res = await axios.post("api/mixtapes", this.state.newMixtape);
     const mixtapes = [...this.state.mixtapes, res.data];
     this.setState({
-      mixtapes,
+      // mixtapes,
       newMixtape: {
         title: "",
         created_by: "",
         created_for: "",
         dedication: "",
         player_url: ""
-      }
+      },
     });
     this.toggleNewMixtapeForm();
     this.getAllMixtapes();
