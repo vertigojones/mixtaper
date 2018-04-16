@@ -15,6 +15,8 @@ class EditMixtapeForm extends Component {
               type="text"
               onChange={this.props.handleChange}
               value={this.props.mixtape.title}
+              maxLength="50"
+              required
             />
           </Form.Field>
           <Form.Field>
@@ -25,6 +27,7 @@ class EditMixtapeForm extends Component {
               type="text"
               onChange={this.props.handleChange}
               value={this.props.mixtape.created_by}
+              maxLength="50"
             />
           </Form.Field>
           <Form.Field>
@@ -35,6 +38,7 @@ class EditMixtapeForm extends Component {
               type="text"
               onChange={this.props.handleChange}
               value={this.props.mixtape.created_for}
+              maxLength="50"
             />
           </Form.Field>
           <Form.Field>
@@ -45,6 +49,7 @@ class EditMixtapeForm extends Component {
               type="text"
               onChange={this.props.handleChange}
               value={this.props.mixtape.dedication}
+              maxLength="200"
             />
           </Form.Field>
           <Form.Field>

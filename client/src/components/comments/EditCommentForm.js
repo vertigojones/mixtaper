@@ -48,6 +48,8 @@ class EditCommentForm extends Component {
               name="post"
               onChange={this.handleChange}
               value={this.state.comment.post}
+              maxLength="200"
+              required
             />
           </Form.Field>
           <Form.Field>
@@ -57,6 +59,8 @@ class EditCommentForm extends Component {
               name="posted_by"
               onChange={this.handleChange}
               value={this.state.comment.posted_by}
+              maxLength="50"
+              required
             />
           </Form.Field>
           <ButtonWrapper>

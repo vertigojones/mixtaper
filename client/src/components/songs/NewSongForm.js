@@ -14,6 +14,7 @@ class NewSongForm extends Component {
               name="track"
               onChange={this.props.handleChange}
               value={this.props.newSong.track}
+              required
             />
           </Form.Field>
           <Form.Field>
@@ -23,6 +24,8 @@ class NewSongForm extends Component {
               name="artist"
               onChange={this.props.handleChange}
               value={this.props.newSong.artist}
+              maxLength="50"
+              required
             />
           </Form.Field>
           <Form.Field>
@@ -32,6 +35,8 @@ class NewSongForm extends Component {
               name="title"
               onChange={this.props.handleChange}
               value={this.props.newSong.title}
+              maxLength="50"
+              required
             />
           </Form.Field>
           <Button color="green" type="submit">

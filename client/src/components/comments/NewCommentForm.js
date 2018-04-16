@@ -14,6 +14,8 @@ class NewCommentForm extends Component {
               name="post"
               onChange={this.props.handleChange}
               value={this.props.newComment.post}
+              maxLength="200"
+              required
             />
           </Form.Field>
           <Form.Field>
@@ -23,6 +25,8 @@ class NewCommentForm extends Component {
               name="posted_by"
               onChange={this.props.handleChange}
               value={this.props.newComment.posted_by}
+              maxLength="50"
+              required
             />
           </Form.Field>
           <ButtonWrapper>

@@ -14,6 +14,8 @@ class NewMixtapeForm extends Component {
               name="title"
               onChange={this.props.handleChange}
               value={this.props.newMixtape.title}
+              maxLength="50"
+              required
             />
           </Form.Field>
           <Form.Field>
@@ -23,6 +25,7 @@ class NewMixtapeForm extends Component {
               name="created_by"
               onChange={this.props.handleChange}
               value={this.props.newMixtape.created_by}
+              maxLength="50"
             />
           </Form.Field>
           <Form.Field>
@@ -32,6 +35,7 @@ class NewMixtapeForm extends Component {
               name="created_for"
               onChange={this.props.handleChange}
               value={this.props.newMixtape.created_for}
+              maxLength="50"
             />
           </Form.Field>
           <Form.Field>
@@ -41,6 +45,7 @@ class NewMixtapeForm extends Component {
               name="dedication"
               onChange={this.props.handleChange}
               value={this.props.newMixtape.dedication}
+              maxLength="200"
             />
           </Form.Field>
           <Form.Field>
