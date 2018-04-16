@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EditCommentForm from "./EditCommentForm";
-import DeleteConfirm from "./DeleteConfirm";
+import DeleteConfirm from "../DeleteConfirm";
 import styled from "styled-components";
 import { Button } from "semantic-ui-react";
 import axios from "axios";

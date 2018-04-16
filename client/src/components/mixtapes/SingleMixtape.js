@@ -13,6 +13,7 @@ class SingleMixtape extends Component {
     comments: [],
     showEditMixtape: false,
     showCreateSongForm: false
+    
   };
 
   componentDidMount() {
