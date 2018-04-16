@@ -8,7 +8,7 @@ class RandomJoke extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://api.icndb.com/jokes/random").then(res => {
+    axios.get("https://api.icndb.com/jokes/random").then(res => {
       console.log(res.data);
       this.setState({
         chuck: res.data
